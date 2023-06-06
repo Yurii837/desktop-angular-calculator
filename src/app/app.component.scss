@@ -1,0 +1,146 @@
+@import "Styles/colors.scss";
+
+.main {
+    display: flex;
+
+    &__tabs { 
+        padding: 40px 0 0 45px;
+        width: 54%;
+    }
+
+    &__information {
+        width: 46%;
+    }
+}
+
+.tab-label {
+    color: $text;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.main-section {
+    height: 80vh;
+    padding-top: 48px;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        &_title {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 18px;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.input-wrapper {
+    margin-right: 93px;
+    height: 50px;
+    margin-bottom: 28px;
+}
+
+.input-text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: $textLighter;
+}
+
+.am-input {
+
+    &__btn {
+        font-size: 19px;
+        margin: 3px;
+        cursor: pointer;
+    }
+}
+
+.cur-select {
+    &__search {
+        height: 40px;
+        margin: 18px 24px 0 24px;
+
+        &_prefix {
+            background-image: url('../images/search.svg') ;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 14px; 
+            height: 14px;
+            margin: 0 10px 0 -4px;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: $textLight;
+        border-bottom: 2px solid $inputBgLight;
+    }
+
+    &__option {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: $textLighter;
+        display: flex;
+        align-items: center;
+        gap: 23px;
+
+        &_perc {
+            display: inline-block;
+            height: 20px;
+            width: 59px;
+            background-color: $bgMain;
+            border-radius: 4px;
+
+            color: #fff;
+            font-weight: 500;
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+}
+
+.bottom-section {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &__info {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+
+
+        &_text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 18px;
+        }
+
+
+        &_icon {
+            background-image: url('../images/info-icon.svg') ;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 14px; 
+            height: 14px;
+        }
+    }
+}
+
+.active {
+    background-image: url('../images/info-icon-active.svg') ; 
+}
+
+.p-right {
+    padding-right: 10px;
+}

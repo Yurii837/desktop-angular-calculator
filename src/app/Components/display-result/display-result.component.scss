@@ -1,0 +1,93 @@
+@import "../../Styles/colors.scss";
+
+.info-comp {
+    padding: 40px 50px 22px 50px;
+    background-color: $main;
+    color: white;
+}    
+
+.info-group {
+    margin-bottom: 36px;
+
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    &__value {
+        font-size: 55px;
+        font-weight: 700;
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: 12px;
+    }
+}
+
+.nav {
+    height: 74px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &__stars {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        width: min-content;
+    }
+
+    &__star {
+        background-image: url('../../../images/star.svg') ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    &__button {
+        box-sizing: border-box;
+        width: 321px;
+        height: 48px;
+        border: 2px solid #FFFFFF;
+        border-radius: 7px;
+
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.xs {
+    width: 17px;
+    height: 16px;
+}
+.s {
+    width: 20px;
+    height: 19px;
+}
+.mid {
+    width: 22px;
+    height: 21px;
+}
+.l {
+    width: 23px;
+    height: 22px;
+}
+.xl {
+    width: 24px;
+    height: 23px;
+}
+
+.text {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: justify;
+}

@@ -1,0 +1,87 @@
+<div class="main">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" class="main__tabs mat-custom">
+        <ng-container *ngFor="let tab of tabs">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <span class="tab-label">{{ tab.title }}</span>
+                </ng-template>
+                <ng-container *ngTemplateOutlet="tabTemp; context: {$implicit: tab}"></ng-container>
+            </mat-tab>
+        </ng-container>  
+    </mat-tab-group>
+    <app-display-result [profit]="currProfit" [percent]="currPercent" [currSymb]="currSymbol" class="main__information"></app-display-result>
+</div>
+
+
+<ng-template mat-tab-content #tabTemp let-tab>
+    <section class="main-section mat-custom">
+        <form class="main-section__form" [formGroup]="formGroup">
+            <div class="main-section__form_title">Amount?</div>
+            <mat-form-field class="input-wrapper input-text map-ammount-custom">
+                <span class="am-input__prefix" matPrefix>{{currSymbol}}</span>
+                <input type="number" formControlName="amount" class="am-input" matInput placeholder="Enter amount">
+                <div class="am-input__suffix" matSuffix>
+                    <i class="fas fa-minus-circle am-input__btn text-danger" (click)="reduxAmount(1000)"></i>
+                    <i class="fas fa-plus-circle am-input__btn text-success" (click)="increaseAmount(1000)"></i>
+                </div>
+            </mat-form-field>
+
+            <div class="main-section__form_title">Currency?</div>
+            <mat-form-field class="input-wrapper">
+                <mat-select formControlName="currency" class="cur-select" placeholder="Change currency with APR">
+                    <mat-select-trigger>
+                        <ng-container  *ngIf="selectedCurrencies.length && currCurrency !== null">
+                            <ng-container *ngTemplateOutlet="optionTemp; context: {$implicit: selectedCurrencies[currCurrency]}"></ng-container> 
+                        </ng-container>
+                    </mat-select-trigger>
+                    <mat-form-field class="cur-select__search mat-search-custom">
+                        <div matPrefix  class="cur-select__search_prefix">
+                        </div>
+                        <input class="cur-select__search_input"(keyup)="onKey($event)" matInput placeholder="search">
+                    </mat-form-field>
+                    <mat-option disabled="true" class="cur-select__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </mat-option>
+                    <mat-option *ngFor="let curr of selectedCurrencies; let i=index" [value]="i">
+                        <ng-container *ngTemplateOutlet="optionTemp; context: {$implicit: curr}"></ng-container>  
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>   
+
+            <div class="main-section__form_title">Periot?</div>
+            <mat-form-field class="input-wrapper input-text">
+                <mat-select formControlName="period" class="mat-select-custom" placeholder="Change periot in month"> 
+                    <mat-option *ngFor="let i of calculatorService.periods" [value]="i">{{i}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <footer class="bottom-section">
+                <section class="bottom-section__info p-right">
+                    <span class="bottom-section__info_text">{{tab.someData}}</span>
+                    <div class="bottom-section__info_icon"></div>
+                </section>
+                <mat-slide-toggle
+                    class="slide-toggle"
+                    color="primary"
+                    checked="true"
+                    disabled="false">
+                </mat-slide-toggle>
+                <section class="bottom-section__info">
+                    <span class="bottom-section__info_text">{{tab.someDataElse}}</span>
+                    <div 
+                        class="bottom-section__info_icon active" 
+                        [matTooltip]="tab.tooltip"
+                        matTooltipPosition="above"
+                    ></div>
+                </section>
+            </footer>
+        </form>
+    </section>
+</ng-template>
+
+<ng-template #optionTemp let-curr>
+    <div class="cur-select__option">
+        <span>{{curr.abr + ' (' + curr.title + ')'}}</span>
+        <span class="cur-select__option_perc">{{'APR' + curr.percent + '%'}}</span>
+    </div>
+</ng-template>

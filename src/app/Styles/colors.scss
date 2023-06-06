@@ -1,0 +1,22 @@
+$main: #56C6AD;
+$bgMain: #77D8C2;
+$bgMainLighter: #E0F3EF;
+$bgMainLight: #DEF1ED;
+
+$text: #252F2C;
+$textLighter: #4A5653;
+$textLight: #838C8A;
+
+$success: #539985;
+$danger: #C75D30;
+$inputBg: #F4F5F6;
+$inputBgLight: #E6E9ED;
+
+
+// Text global styles
+::ng-deep .text-success {
+    color: $success !important;
+}
+::ng-deep .text-danger {
+    color: $danger !important;
+}
