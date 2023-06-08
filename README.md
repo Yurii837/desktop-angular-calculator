@@ -7,7 +7,9 @@
 
 ## [DEMO-WEB](https://yurii837.github.io/desktop-angular-calculator/)
 
-##  To open desktop(Windows) application download pack from (https://fex.net/ru/s/cmzbndm), unpack it local and run *.exe file.
+##  To open desktop application download pack(for Windows) from (https://fex.net/ru/s/cmzbndm), 
+##                                           (for MacOS) from (https://fex.net/ru/s/zktcf3p),
+##                                           ,unpack it local and run *.exe file.
 
 ##   To create packege for another system(MacOS, Linux) - follow the instruction below. 
 
